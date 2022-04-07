@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Rampart+One&display=swap');
+
+*,
+*:before,
+*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(#5cd0ff,#CFFFB0);
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text-1{
+    font-size: 70px;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 80px;
+}
+
+.title{
+    font-size: 80px;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+/*------IMAGES------*/
+
+.img-wrapper{
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+.left-imgs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/*------NAVBAR-------*/
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: #010624;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.menu-items{
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+.navbar .fa-solid {
+    cursor: pointer;
+    color: white;
+}
+
+/*----------------------LOGIN----------------------*/
+.login-title{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 80px;
+}
+
+.login{
+    padding: 20px 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.stuff{
+    padding: 150px 0px;
+    text-align: center;
+
+    background-image: url("images/therewasanattempt.png");
+    background-repeat: no-repeat;
+    background-size: 600px;
+    background-position: center;
+
+    margin: auto;
+    
+    
+}
+
+.credentials {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.fixit{
+    width: 200px;
+    margin: auto;
+}
+
+.button1 {
+    width: 240px;
+    height: 45px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: white;
+    background-color: #010624;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease 0s;
+    cursor: pointer;
+    border: 1px solid black;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/*----------------------LE GAME----------------------*/
+
+
+.game-sections{
+    padding: 20px 500px;
+}
+
+.game-sections img{
+    height: 400px;
+}
+
+.naviguess{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button2{
+    width: 140px;
+    height: 35px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: white;
+    background-color: #15bdc9;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease 0s;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.actualthing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cob-bucks{
+    text-align: center;
+    position: relative;
+
+    font-weight: 500;
+}
+
+.cob-bucks img{
+    height: 100px;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    
+}
+
+.amount {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loginbonus{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.winner .fa-play{
+    font-size: 70px;
+}
+
+.prog{
+    height: 50px;
+    width: 500px;
+}
+
+/*-------------------BONUS------------------*/
+
+.bonus-section{
+    padding: 40px 200px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.idk{
+    background-color: aliceblue;
+    padding: 60px 120px;
+    border-radius: 10px;
+}
+
+.agreements{
+    padding-top: 30px;
+}
+
+/*-----------STORE---------------------------*/
+.store img{
+    padding: 0 15px;
+    height: 200px;
+    width: auto;
+}
+
+.store .img-wrapper{
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+.products{
+    padding: 20px 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    max-width: 300px;
+    border-radius: 10px;
+
+    /*background-color: white;*/
+    background: rgba(255, 255, 255, 0.2);
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin: 10px 5px; 
+
+    
+}
+
+.card h1 {
+    padding: 15px;
+}
+
+.card p {
+    font-size: 14px;
+}
+  
+.item-price {
+    font-size: 22px !important;
+    padding-bottom: 10px;
+}
+  
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+  
+.card button:hover {
+    opacity: 0.7;
+}
