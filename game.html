@@ -21,59 +21,181 @@
         
         <nav class="navbar"> 
             <div class="menu-items">
-                <div class="home">
-                    <a href="game.html">
+                <div class="home show-home">
+                    
                         <i class="fa-solid fa-house"></i>
-                    </a>
+                    
                 </div>
             </div>
         </nav>
         
-        <section>
-            <div class="title">Cob's Soulo Game</div>
-        </section>
+        <div class="gamewindow">
+            <section>
+                <div class="title">Cob's Soulo Game</div>
+            </section>
 
-        <section class="game-sections">
-            <div class="naviguess">
-                <button class="button2"><a href="loginbonus.html">Login Bonus</a></button>
-                <button class="button2"><a href="store.html">Store</a></button>
-                <button class="button2"><a href="recharge.html">Recharge</a></button>
-            </div>
-        </section>
+            <section class="game-sections">
+                <div class="naviguess">
+                    <a href="loginbonus.html"><button class="button2">Login Bonus</button></a>
+                    <a href="store.html"><button class="button2">Store</button></a>
+                    <!--<a href="recharge.html"><button class="button2 show-recharge">Recharge</button></a>-->
+                    <button class="button2 show-recharge">Recharge</button>
+                </div>
+            </section>
 
-        <section class="game-sections actualthing">
-            <div>
-                <!--<img src="images/not-csgo.gif" alt="">-->
-            </div>
-            <div class="cob-bucks">
-                <div>CobBucks</div>
-                <div class="container"><img src="images/cb-gold.png"  alt=""><div class="amount goldbucks">1</div></div>
-                <div class="container"><img src="images/cb-solver.png"  alt=""><div class="amount silverbucks">0</div></div>
-                <div class="container"><img src="images/cb-bronze.png"  alt=""><div class="amount brassbucks">69</div></div>
-            </div>
-        </section>
+            <section class="game-sections actualthing">
+                <div>
+                    <!--<img src="images/not-csgo.gif" alt="">-->
+                </div>
+                <div class="cob-bucks">
+                    <div>CobBucks</div>
+                    <div class="container"><img src="images/cb-gold.png"  alt=""><div class="amount goldbucks">1</div></div>
+                    <div class="container"><img src="images/cb-solver.png"  alt=""><div class="amount silverbucks">0</div></div>
+                    <div class="container"><img src="images/cb-bronze.png"  alt=""><div class="amount brassbucks">69</div></div>
+                </div>
+            </section>
 
-        <section class="game-sections loginbonus">
-            <div class="claim" onclick="claimBonus()">
-                <i class="fa-solid fa-trophy"></i>
-                <div>Click to claim your daily bonus!</div>
-            </div>
-            <div>
-                <div>Login Bonus</div>
-                <progress id="file" value="1" max="7" class="prog"></progress>
-                <div>Login X more days to unlock darkmode!</div>
-            </div>
-            <div class="winner locked" id="locked">
-                <i class="fa-solid fa-lock"></i>
-                <div id="bonus-txt">Dark Mode (locked)</div>
-            </div>
-            <div class="winner unlocked" id="unlocked">
-                <a href="loginbonus.html">
-                    <i class="fa-solid fa-unlock"></i>
-                    <div id="bonus-txt">Dark Mode UNLOCKED! Click here to claim your bonus.</div>
-                </a>
-            </div>
-        </section>
-        
+            <section class="game-sections loginbonus">
+                <div class="claim" onclick="claimBonus()">
+                    <i class="fa-solid fa-trophy"></i>
+                    <div>Click to claim your daily bonus!</div>
+                </div>
+                <div>
+                    <div>Login Bonus</div>
+                    <progress id="file" value="1" max="7" class="prog"></progress>
+                    <div>Login <span id="daysuntil">X</span> more days to unlock darkmode!</div>
+                </div>
+                <div class="winner locked" id="locked">
+                    <i class="fa-solid fa-lock"></i>
+                    <div id="bonus-txt">Dark Mode (locked)</div>
+                </div>
+                <div class="winner unlocked" id="unlocked">
+                    <a href="loginbonus.html">
+                        <i class="fa-solid fa-unlock"></i>
+                        <div id="bonus-txt">Dark Mode UNLOCKED! Click here to claim your bonus.</div>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <div class="rechargewindow">
+            <section>
+                <div class="title">Recharge</div>
+            </section>
+    
+            <!--SHOPPING CART-->
+            <section class="cart">
+                <p class="cart-title">Fill Up On CobBucks</p>
+                <!--ITEMS-->
+                <table class="cart-items" id="cart">
+                    <thead>
+                        <tr>
+                            <td>Item</td>
+                            <td>Price per unit</td>
+                            <td>Quantity</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cart-item">
+                            <td>
+                                <h1 class="cart-item-title">Gold Bucks</h1>
+                                <img src="images/cb-gold.png" class="item-image">
+                            </td>
+                            <td class="cart-item-price">$3.00</td>
+                            <td><input class="quantity" id="gold-quantity" type="number" value="0"></td>
+                        </tr>
+                        <tr class="cart-item">
+                            <td>
+                                <h1 class="cart-item-title">Silver Bucks</h1>
+                                <img src="images/cb-solver.png" class="item-image">
+                            </td>
+                            <td class="cart-item-price">$2.00</td>
+                            <td><input class="quantity" id="silver-quantity" type="number" value="0"></td>
+                        </tr>
+                        <tr class="cart-item">
+                            <td>
+                                <h1 class="cart-item-title">Brass Bucks</h1>
+                                <img src="images/cb-bronze.png" class="item-image">
+                            </td>
+                            <td class="cart-item-price">$1.00</td>
+                            <td><input class="quantity" id="brass-quantity" type="number" value="0"></td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+                <!--BILLING AND ADDRESS-->
+                <div class="fees">
+                    <div class="row">
+                        <p>Subtotal</p>
+                        <p class="cart-subtotal">$0</p>
+                    </div>
+                    <div class="row">
+                        <p>Tax</p>
+                        <p>$1</p>
+                    </div>
+                    <hr style="height:2px;border-width:0;color:gray;background-color:black">
+                    <div class="row">
+                        <p>Total</p>
+                        <p class="cart-total-price">$1</p>
+                    </div>
+                </div>
+    
+                <!--BILLING AND ADDRESS-->
+                <div class="form">
+                    <!--ADDRESS INFO-->
+                    <div class="address">
+                        <h2>Billing Address</h2>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Jonathan Gurary">
+                            
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input type="text" id="email" name="email" placeholder="email@website.com">
+                            
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                        <input type="text" id="adr" name="address" placeholder="1407 W Main St">
+                            
+                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                        <input type="text" id="city" name="city" placeholder="Whitewater">
+                
+                        <div class="row">
+                            <div >
+                                <label for="state"><i class="fa-regular fa-map"></i> State</label>
+                                <input type="text" id="state" name="state" placeholder="WI" >
+                            </div>
+                            <div >
+                                <label for="zip"><i class="fa-solid fa-map-pin"></i> Zip</label>
+                                <input type="text" id="zip" name="zip" placeholder="53190">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!--PAYMENT INFO-->
+                    <div class="payment">
+                        <h2>Payment</h2>
+                        <label for="cname"><i class="fa-solid fa-id-card"></i> Name on Card</label>
+                        <input type="text" id="cname" name="cardname" placeholder="Jonathan Gurary">
+                            
+                        <label for="ccnum"><i class="fa-solid fa-credit-card"></i> Credit card number</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="1234567890">
+                            
+                        <div class="row">
+                            <div>
+                                <label for="expyear"> <i class="fa-solid fa-calendar"></i> Expiration</label>
+                                <input type="text" id="expyear" name="expyear" placeholder="02/22">
+                            </div>
+                            <div>
+                                <label for="cvv"><i class="fa-solid fa-unlock"></i> CVV</label>
+                                <input type="password" id="cvv" name="cvv" placeholder="420" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div>
+                    <button class="place-order">Place Order</button>
+                </div>
+    
+            </section>
+        </div>
     </body>
 </html>

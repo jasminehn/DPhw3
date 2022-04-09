@@ -101,7 +101,30 @@ section{
 }
 
 .terms{
+    background-color: aliceblue;
+    padding: 60px 120px;
+    border-radius: 10px;
+}
 
+.collapse {
+    border: 1px solid black;
+    background-color: rgb(138, 138, 138);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapse:hover {
+    background-color: #555;
+}
+
+.terms-content {
+    display: none;
+    overflow: hidden;
 }
 
 .credentials {
