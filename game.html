@@ -43,27 +43,35 @@
 
         <section class="game-sections actualthing">
             <div>
-                <!--<img src="images/notrocketleague.gif" alt="">-->
+                <!--<img src="images/not-csgo.gif" alt="">-->
             </div>
             <div class="cob-bucks">
                 <div>CobBucks</div>
-                <div class="container"><img src="images/cb-gold.png"  alt=""><div class="amount">24</div></div>
-                <div class="container"><img src="images/cb-solver.png"  alt=""><div class="amount">24</div></div>
-                <div class="container"><img src="images/cb-bronze.png"  alt=""><div class="amount">24</div></div>
+                <div class="container"><img src="images/cb-gold.png"  alt=""><div class="amount goldbucks">1</div></div>
+                <div class="container"><img src="images/cb-solver.png"  alt=""><div class="amount silverbucks">0</div></div>
+                <div class="container"><img src="images/cb-bronze.png"  alt=""><div class="amount brassbucks">69</div></div>
             </div>
         </section>
 
         <section class="game-sections loginbonus">
+            <div class="claim" onclick="claimBonus()">
+                <i class="fa-solid fa-trophy"></i>
+                <div>Click to claim your daily bonus!</div>
+            </div>
             <div>
                 <div>Login Bonus</div>
                 <progress id="file" value="1" max="7" class="prog"></progress>
                 <div>Login X more days to unlock darkmode!</div>
             </div>
-            <div class="winner">
-                
-                    <i class="fa-solid fa-play"></i>
-                
-                <div>Dark Mode (locked)</div>
+            <div class="winner locked" id="locked">
+                <i class="fa-solid fa-lock"></i>
+                <div id="bonus-txt">Dark Mode (locked)</div>
+            </div>
+            <div class="winner unlocked" id="unlocked">
+                <a href="loginbonus.html">
+                    <i class="fa-solid fa-unlock"></i>
+                    <div id="bonus-txt">Dark Mode UNLOCKED! Click here to claim your bonus.</div>
+                </a>
             </div>
         </section>
         
