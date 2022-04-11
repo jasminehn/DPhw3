@@ -67,10 +67,12 @@ function ready() {
         placeorderElement.addEventListener('click', purchaseClicked)
     }
 
+    /*
     var getbonusElement = document.getElementById('get-bonus')
     if(getbonusElement){
         getbonusElement.addEventListener('click', getBonus)
     }
+    */
 
     var collapse = document.getElementsByClassName("collapse")[0]
     //var terms = document.getElementByClassName("terms-content");
@@ -124,9 +126,19 @@ function unlockBonus(){
     document.getElementById('unlocked').style.display = 'block'
 }
 
+function validateChecks() {
+    if (document.getElementById('checkbox1').checked && document.getElementById('checkbox2').checked) {
+        alert('Congrats, you have redeemed dark mode! Next week\'s bonus is: Aimbot')
+    } else {
+        alert("You must check BOTH checkboxes >:(");
+    }
+}
+
+/*
 function getBonus() {
     alert('Congrats, you have redeemed dark mode! Next week\'s bonus is: Aimbot')
 }
+*/
 
 //-----------STORE-----------------
 function buyItem(event){
