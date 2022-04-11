@@ -158,7 +158,7 @@ section{
 
 /*----------------------LE GAME----------------------*/
 .game-sections{
-    padding: 20px 500px;
+    padding: 20px 400px;
 }
 
 .game-sections img{
@@ -194,6 +194,25 @@ section{
     justify-content: space-around;
 }
 
+.startbutton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.yuh{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 30px;
+    cursor: pointer;
+    background-color: rgb(98, 224, 125);
+}
+
+.yuh:hover{
+    background-color: rgb(74, 152, 91);
+}
+
 .cob-bucks{
     text-align: center;
     position: relative;
@@ -223,6 +242,7 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 30px;
 }
 
 .winner{
@@ -252,6 +272,14 @@ section{
 .claim .fa-trophy{
     font-size: 70px;
     
+}
+
+.game-items{
+    text-align: center;
+}
+
+.game-item img{
+    height: 90px;
 }
 
 /*-------------------BONUS------------------*/

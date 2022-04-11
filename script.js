@@ -5,44 +5,56 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
-    //document.getElementById('get-bonus').addEventListener('click', getBonus)
-    //var why = document.getElementById('get-bonus')
-    /*
-    var quantityInputs = document.getElementsByClassName('quantity')
-    for (var i = 0; i < quantityInputs.length; i++) {
-        var input = quantityInputs[i]
-        input.addEventListener('change', quantityChanged)
-    }
-
-    document.getElementsByClassName('place-order')[0].addEventListener('click', purchaseClicked)
-    alert("what")
-    */
     // Hide cart and terms on load.
     var rechargewindow = document.getElementsByClassName('rechargewindow')[0]
     var homewindow = document.getElementsByClassName('gamewindow')[0]
-
-    rechargewindow.style.display = 'none'
+    if(rechargewindow){
+        rechargewindow.style.display = 'none'
+    }
+    
     // Show products, hide cart.
     var showProductsBtn = document.getElementsByClassName('show-recharge')[0]
-    showProductsBtn.addEventListener('click', function() {
-        if (rechargewindow.style.display != 'block') {
-            rechargewindow.style.display = 'block'
-        }
-        if (homewindow.style.display != 'none') {
-            homewindow.style.display = 'none'
-        }
-    })
+    if(showProductsBtn){
+        showProductsBtn.addEventListener('click', function() {
+            if (rechargewindow.style.display != 'block') {
+                rechargewindow.style.display = 'block'
+            }
+            if (homewindow.style.display != 'none') {
+                homewindow.style.display = 'none'
+            }
+        })
+    }
 
     // Show cart, hide products.
     var showCartBtn = document.getElementsByClassName('show-home')[0]
-    showCartBtn.addEventListener('click', function() {
-        if (homewindow.style.display != 'block') {
-            homewindow.style.display = 'block'
-        }
-        if (rechargewindow.style.display != 'none') {
-            rechargewindow.style.display = 'none'
-        }
-    })
+    if(showCartBtn){
+        showCartBtn.addEventListener('click', function() {
+            if (homewindow.style.display != 'block') {
+                homewindow.style.display = 'block'
+            }
+            if (rechargewindow.style.display != 'none') {
+                rechargewindow.style.display = 'none'
+            }
+        })
+    }
+
+    //hide the game
+    var notcsgo = document.getElementsByClassName('dagame')[0]
+    if(notcsgo){
+        notcsgo.style.display = 'none'
+    }
+    var startbutton = document.getElementsByClassName('startbutton')[0]
+    var playgame = document.getElementsByClassName('yuh')[0]
+    if(playgame){
+        playgame.addEventListener('click', function() {
+            if (notcsgo.style.display != 'block') {
+                notcsgo.style.display = 'block'
+            }
+            if (startbutton.style.display != 'none') {
+                startbutton.style.display = 'none'
+            }
+        })
+    }
 
     var quantityInputs = document.getElementsByClassName('quantity')
     for (var i = 0; i < quantityInputs.length; i++) {
@@ -59,23 +71,6 @@ function ready() {
     if(getbonusElement){
         getbonusElement.addEventListener('click', getBonus)
     }
-
-    /*
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-        content.style.display = "none";
-        } else {
-        content.style.display = "block";
-        }
-    });
-    }
-    */ 
 
     var collapse = document.getElementsByClassName("collapse")[0]
     //var terms = document.getElementByClassName("terms-content");
@@ -99,9 +94,16 @@ function ready() {
     if(daysuntil){
         daysuntil.innerHTML = 7 - clicks;
     }
-    
+
+    //add listener for buy button
+    var addItemButtons = document.getElementsByClassName('add-item')
+    for (var i = 0; i < addItemButtons.length; i++) {
+        var button = addItemButtons[i]
+        button.addEventListener('click', buyItem)
+    }
 }
 
+//CLAIMING BONUS
 var clicks = 1;
 
 function claimBonus() {
@@ -123,8 +125,52 @@ function unlockBonus(){
 }
 
 function getBonus() {
-    alert('Congrats, you have redeemed dark mode!! Next weeks bonus is: aimbot')
+    alert('Congrats, you have redeemed dark mode! Next week\'s bonus is: Aimbot')
 }
+
+//-----------STORE-----------------
+function buyItem(event){
+    /*
+    var storeItems = document.getElementsByClassName('card')
+    for (var i = 0; i < storeItems.length; i++) {
+        var beep = storeItems[i];
+        var itemname = beep.getElementsByClassName('item-title')
+        alert('Just purchased ', itemname)
+    }
+    var beep = storeItems[i];
+    var itemname = beep.getElementsByClassName('item-title')
+    alert('Just purchased ', itemname)
+    */
+    var button = event.target
+    var shopItem = button.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('item-title')[0].innerText
+    
+    var price = shopItem.getElementsByClassName('item-price')[0].innerText
+    console.log('Just purchased', title, 'for', price)
+    alert('Just purchased ' + title + ' for ' + price)
+}
+
+//CLICK THROUGH GAME
+/*
+var myImages1 = new Array();
+    myImages1.push("img_01.gif");
+    myImages1.push("img_02.gif");
+    myImages1.push("img_03.gif");
+    myImages1.push("img_04.gif");
+    myImages1.push("img_05.gif");
+    myImages1.push("img_06.gif");
+    myImages1.push("img_07.gif");
+    myImages1.push("img_08.gif");
+    myImages1.push("img_09.gif");
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function pickimg2() {
+  document.randimg.src = myImages1[getRandomInt(0, myImages1.length - 1)];
+}
+*/
 
 //----------------RECHARGE-------------------
 var goldbucks = 0;
@@ -190,7 +236,6 @@ function quantityChanged(event) {
     silverbucks = Number(document.getElementById('silver-quantity').value);
     brassbucks = Number(document.getElementById('brass-quantity').value);
 }
-
 
 function purchaseClicked() {
     alert('Thank you for your purchase!')
