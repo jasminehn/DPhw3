@@ -106,29 +106,31 @@ section{
 
 .terms{
     background-color: aliceblue;
-    padding: 60px 120px;
+    padding: 20px 20px;
     border-radius: 10px;
+
+    opacity: 0.2;
+}
+.terms:hover{
+    opacity: 1;
 }
 
 .collapse {
     border: 1px solid black;
-    background-color: rgb(138, 138, 138);
-    color: white;
+    background-color: rgb(137, 137, 137);
+    color: black;
     cursor: pointer;
-    padding: 18px;
+    padding: 10px;
     width: 100%;
     text-align: left;
     outline: none;
-    font-size: 15px;
-}
-
-.active, .collapse:hover {
-    background-color: #555;
+    font-size: 12px;
 }
 
 .terms-content {
     display: none;
     overflow: hidden;
+    font-size: 10px;
 }
 
 .credentials {

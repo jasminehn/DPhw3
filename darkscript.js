@@ -337,7 +337,7 @@ window.addEventListener('load', (event) => {
    };
    
    const runTickerAnimation = () => {
-     // https://css-tricks.com/get-value-of-css-rotation-through-javascript/
+     
      const values = spinnerStyles.transform.split("(")[1].split(")")[0].split(",");
      const a = values[0];
      const b = values[1];  
@@ -399,8 +399,6 @@ window.addEventListener('load', (event) => {
           hour = minute * 60,
           day = hour * 24;
   
-    //I'm adding this section so I don't have to keep updating this pen every year :-)
-    //remove this if you don't need it
     let today = new Date(),
         dd = String(today.getDate()).padStart(2, "0"),
         mm = String(today.getMonth() + 1).padStart(2, "0"),
@@ -474,3 +472,31 @@ function raffle() {
     //document.getElementById("demo").innerHTML = text;
     alert(text)
   }
+
+  window.onload = function() {
+
+    var pageTitle = document.title;
+    var attentionMessage = '🔥 One more game? 🔥';
+    var blinkEvent = null;
+  
+    document.addEventListener('visibilitychange', function(e) {
+      var isPageActive = !document.hidden;
+  
+      if(!isPageActive){
+        blink();
+      }else {
+        document.title = pageTitle;
+        clearInterval(blinkEvent);
+      }
+    });
+  
+    function blink(){
+      blinkEvent = setInterval(function() {
+        if(document.title === attentionMessage){
+          document.title = pageTitle;
+        }else {
+          document.title = attentionMessage;
+        }
+      }, 100);
+    }
+  };
