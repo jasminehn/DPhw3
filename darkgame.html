@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CSG - Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="darkstyle.css">
+        <script src="darkscript.js"></script>
+        <script src="https://kit.fontawesome.com/69c6d76ec7.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+
+        <nav class="navbar"> 
+            <div class="menu-items">
+                <div class="home show-home">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                <div class="lightdark">
+                    <a href="index.html"><i class="fa-solid fa-lightbulb"></i> Light Version</a>
+                    <a href="darkindex.html"><i class="fa-regular fa-lightbulb"></i> Dark Version (you are here)</a>
+                </div>
+            </div>
+        </nav>
+        
+
+        <!--GAME WINDOW-->
+        <div class="gamewindow">
+            <section>
+                <div class="title">Cob's Soulo Game</div>
+            </section>
+
+            <section class="game-sections">
+                <div class="naviguess">
+                    <a href="darkloginbonus.html"><button class="button2">Login Bonus</button></a>
+                    <a href="darkstore.html"><button class="button2">Store</button></a>
+                    <!--<a href="recharge.html"><button class="button2 show-recharge">Recharge</button></a>-->
+                    <button class="button2 show-recharge" onclick="raffle()">Recharge</button>
+                </div>
+            </section>
+
+            <section class="game-sections actualthing">
+                <div class="game-items">
+                    <h3>Inventory</h3>
+                    <div class="game-item">
+                        <img src="images/store/spraypack.webp">
+                        <p>Graffiti Box</p>
+                    </div>
+                    <div class="game-item">
+                        <img src="images/store/gamma-case.webp">
+                        <p>Gamma Case</p>
+                    </div>
+                    <div class="game-item">
+                        <img src="images/store/bestiary_capsule.webp">
+                        <p>Bestiary Capsule</p>
+                    </div>
+                </div>
+                <div class="startbutton">
+                    <p>Click the thing and gameplay will happen!</p> 
+                    <p>Your inventory expires at <b>midnight</b> so use your items ASAP</p> 
+                    <p class="yuh" onclick="freeipod()">PLAY</p> 
+                </div>
+                <div class="dagame">
+                    <img src="images/not-csgo.gif" alt="">
+                </div>
+                <div class="cob-bucks">
+                    <h3>CobBucks</h3>
+                    <div class="container"><img src="images/cb-gold.png"  alt=""><div class="amount goldbucks">1</div></div>
+                    <div class="container"><img src="images/cb-solver.png"  alt=""><div class="amount silverbucks">0</div></div>
+                    <div class="container"><img src="images/cb-bronze.png"  alt=""><div class="amount brassbucks">69</div></div>
+                </div>
+            </section>
+
+            <section class="game-sections loginbonus">
+                <div class="claim" onclick="claimBonus()">
+                    <i class="fa-solid fa-trophy"></i>
+                    <div>Click to claim your daily bonus!</div>
+                </div>
+                <div>
+                    <div><h1>Login Bonus</h1></div>
+                    <progress id="file" value="1" max="7" class="prog"></progress>
+                    <div>Login <span id="daysuntil">X</span> more days to unlock darkmode!</div>
+                </div>
+                <div class="winner locked" id="locked">
+                    <i class="fa-solid fa-lock"></i>
+                    <div id="bonus-txt">Dark Mode (locked)</div>
+                </div>
+                <div class="winner unlocked" id="unlocked">
+                    <a href="darkloginbonus.html">
+                        <i class="fa-solid fa-unlock"></i>
+                        <div id="bonus-txt">Dark Mode UNLOCKED! Click here to claim your bonus.</div>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+
+        <!--RECHARGE WINDOW-->
+        <div class="rechargewindow">
+            <section>
+                <div class="title">Recharge</div>
+            </section>
+    
+            <!--SHOPPING CART-->
+            <section class="cart">
+                <p class="cart-title">Fill Up On CobBucks</p>
+                <!--ITEMS-->
+                <table class="cart-items" id="cart">
+                    <thead>
+                        <tr>
+                            <td>Item</td>
+                            <td>Price per unit</td>
+                            <td>Quantity</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cart-item">
+                            <td>
+                                <h1 class="cart-item-title">Gold Bucks</h1>
+                                <img src="images/cb-gold.png" class="item-image">
+                            </td>
+                            <td class="cart-item-price">$10.00</td>
+                            <td><input class="quantity" id="gold-quantity" type="number" value="10"></td>
+                        </tr>
+                        <tr class="cart-item">
+                            <td>
+                                <h1 class="cart-item-title">Silver Bucks</h1>
+                                <img src="images/cb-solver.png" class="item-image">
+                            </td>
+                            <td class="cart-item-price">$5.00</td>
+                            <td><input class="quantity" id="silver-quantity" type="number" value="30"></td>
+                        </tr>
+                        <tr class="cart-item">
+                            <td>
+                                <h1 class="cart-item-title">Brass Bucks</h1>
+                                <img src="images/cb-bronze.png" class="item-image">
+                            </td>
+                            <td class="cart-item-price">$2.00</td>
+                            <td><input class="quantity" id="brass-quantity" type="number" value="75"></td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+                <!--BILLING AND ADDRESS-->
+                <div class="fees">
+                    <div class="row">
+                        <p>Subtotal</p>
+                        <p class="cart-subtotal">$400</p>
+                    </div>
+                    <div class="row">
+                        <p>Tax</p>
+                        <p>$5</p>
+                    </div>
+                    <div class="row">
+                        <p>Weekly Lootbox Subscription</p>
+                        <p>$3</p>
+                    </div>
+                    <div class="row">
+                        <p>Raffle</p>
+                        <p>$5</p>
+                    </div>
+                    <div class="row">
+                        <p>Developer's Rent</p>
+                        <p>$7</p>
+                    </div>
+                    <hr style="height:2px;border-width:0;color:gray;background-color:black">
+                    <div class="row">
+                        <p>Total</p>
+                        <p class="cart-total-price">$420</p>
+                    </div>
+                </div>
+    
+                <!--BILLING AND ADDRESS-->
+                <div class="form">
+                    <!--ADDRESS INFO-->
+                    <div class="address">
+                        <h2>Billing Address</h2>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Jonathan Gurary">
+                            
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input type="text" id="email" name="email" placeholder="email@website.com">
+                            
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                        <input type="text" id="adr" name="address" placeholder="1407 W Main St">
+                            
+                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                        <input type="text" id="city" name="city" placeholder="Whitewater">
+                
+                        <div class="row">
+                            <div >
+                                <label for="state"><i class="fa-regular fa-map"></i> State</label>
+                                <input type="text" id="state" name="state" placeholder="WI" >
+                            </div>
+                            <div >
+                                <label for="zip"><i class="fa-solid fa-map-pin"></i> Zip</label>
+                                <input type="text" id="zip" name="zip" placeholder="53190">
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!--PAYMENT INFO-->
+                    <div class="payment">
+                        <h2>Payment</h2>
+                        <label for="cname"><i class="fa-solid fa-id-card"></i> Name on Card</label>
+                        <input type="text" id="cname" name="cardname" placeholder="Jonathan Gurary">
+                            
+                        <label for="ccnum"><i class="fa-solid fa-credit-card"></i> Credit card number</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="1234567890">
+                            
+                        <div class="row">
+                            <div>
+                                <label for="expyear"> <i class="fa-solid fa-calendar"></i> Expiration</label>
+                                <input type="text" id="expyear" name="expyear" placeholder="02/22">
+                            </div>
+                            <div>
+                                <label for="cvv"><i class="fa-solid fa-unlock"></i> CVV</label>
+                                <input type="password" id="cvv" name="cvv" placeholder="420" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div>
+                    <button class="place-order">Place Order</button>
+                </div>
+    
+            </section>
+        </div>
+
+    </body>
+</html>
